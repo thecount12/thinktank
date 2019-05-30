@@ -1,0 +1,7 @@
+.jumbotron {
+    background-image: url(/static/jumboworkspaces.png);
+    background-size: cover;
+    height: 100%;
+	box-sizing: border-box;
+}
+
