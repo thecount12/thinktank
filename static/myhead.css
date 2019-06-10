@@ -1,5 +1,6 @@
 .jumbotron {
-    background-image: url(/static/jumboworkspaces.png);
+    /* background-image: url(/static/jumboworkspaces.png); */
+    background-image: url(https://thinktank1.s3.amazonaws.com/jumboworkspaces.png);
     background-size: cover;
     background-repeat: repeat-y;
     height: 100%;
