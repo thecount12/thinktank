@@ -17,6 +17,7 @@ urlpatterns = [
 	path('logout/', auth_views.LogoutView.as_view(), {'next_page': '/'}, name='logout'),
 	path('', basicapp.views.index),
 	path('calendar/', basicapp.views.calendar, name='calendar'),
+	path('faq/', basicapp.views.faq, name='faq'),
 	path('signup/', signup.views.Signup),
 	path('thanks/', signup.views.thanks),
 	path('blog/', include('blog.urls')),
