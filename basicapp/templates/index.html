@@ -1,28 +1,58 @@
 
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
-<p style="text-align: center">Welcome to Think Tank Workspaces. 'Raspberry Works', is the software
+<p style="text-align: center" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">Welcome to Think Tank Workspaces. 'Raspberry Works', is the software
     we use to run our space. With 'Raspberry Works' you can search membership information, billing,
     events, and other things related to Think Tank Workspaces.</p>
 
 <div class="row">
-      <div class="col-md-4">
-        <!--<h2>Heading</h2>-->
-        <p>General questions, office space, and billing</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><foreignObject style="text-align: center;"><img style="display: block; text-align: center; position: absolute; top: 30px; left: 150px" height="72" width="72" src="/static/chat_icon.png"></foreignObject><text x="50%" y="50%" fill="#eceeef" dy=".3em">General questions, office and billing.</text></svg>
+            <div class="card-body">
+              <p class="card-text" style="text-align: center">Frequently asked questions.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="{% url 'faq' %}"<button type="button" class="btn btn-sm btn-outline-secondary">FAQ</button></a>
+                  <!--<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+                </div>
+                <!--<small class="text-muted">9 mins</small>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+              <svg class="bd-placeholder-img align-center center" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><foreignObject style="text-align: center;"><img style="display: block; text-align: center; position: absolute; top: 30px; left: 150px" height="72" width="72" src="/static/people_icon.png"></foreignObject><text x="50%" y="50%" fill="#eceeef" dy=".3em">Who's who at Think Tank</text></svg>
+            <div class="card-body">
+              <p class="card-text" style="text-align: center">View All Members.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Members</button>
+                  <!--<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+                </div>
+                <!--<small class="text-muted">9 mins</small>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+              <svg class="bd" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"></title><rect width="100%" height="100%" fill="#55595c"/><foreignObject><p style="text-align: center"><iframe style="text-align: center; display: block; position: absolute; top: 0; margin: 0; float: right;" width="340" height="150" frameborder="0" scrolling="no" id="cal" src="{% url 'calendar' %}"></iframe></p></foreignObject></svg>
+            <div class="card-body">
+              <p class="card-text" style="text-align: center">See All Events</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <!--<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+                </div>
+                <!--<small class="text-muted">9 mins</small>-->
+              </div>
+            </div>
+          </div>
+        </div>
 
     <hr>
 {% endblock %}
