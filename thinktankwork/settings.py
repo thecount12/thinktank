@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+<<<<<<< HEAD
 #import dj_database_url
+=======
+import dj_database_url
+>>>>>>> 06205abc8bde53bd6dd0b275dd7a367a027dc6fa
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -94,6 +98,7 @@ DATABASES = {
     }
 }
 
+DATABASES = {'default': dj_database_url.config()}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -126,6 +131,18 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+USE_S3 = os.getenv('USE_S3') == 'TRUE'
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_QUERYSTRING_AUTH = False
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3-website-us-west-2.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = 'https://%s/' % AWS_S3_CUSTOM_DOMAIN
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 
 
 # Static files (CSS, JavaScript, Images)

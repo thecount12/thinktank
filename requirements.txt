@@ -1,5 +1,15 @@
 Django==2.2.2
 pytz==2019.1
 sqlparse==0.3.0
+<<<<<<< HEAD
 dj-database-url 0.5.0
 
+=======
+dj-static==0.0.6
+dj-database-url==0.5.0
+psycopg2==2.8.2
+gunicorn==19.9.0
+static3==0.7.0
+boto==2.49.0
+django-storages==1.7.1
+>>>>>>> 06205abc8bde53bd6dd0b275dd7a367a027dc6fa
