@@ -11,11 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-<<<<<<< HEAD
-#import dj_database_url
-=======
-import dj_database_url
->>>>>>> 06205abc8bde53bd6dd0b275dd7a367a027dc6fa
+
+# import dj_database_url
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
