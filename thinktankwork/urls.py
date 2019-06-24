@@ -21,5 +21,6 @@ urlpatterns = [
 	path('signup/', signup.views.Signup),
 	path('thanks/', signup.views.thanks),
 	path('blog/', include('blog.urls')),
+	path('member/', include('member.urls')),
 	path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)

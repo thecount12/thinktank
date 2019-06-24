@@ -6,12 +6,12 @@ from django.shortcuts import render_to_response
 
 
 def index(request):
-	return render_to_response("index.html")
+    return render_to_response("index.html")
 
 
 def calendar(request):
-	return render_to_response("calendar.html")
+    return render_to_response("calendar.html")
 
 
 def faq(request):
-	return render_to_response("faq.html")
+    return render_to_response("faq.html")
