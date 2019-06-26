@@ -48,9 +48,13 @@ class UserBillAdmin(admin.ModelAdmin):
         'mark_paid',
         'comment',
         'note',
+        'pkg_name',
     )
     ordering = ['-period_start', ]
     inlines = [BillLineItemInline, ]
+
+    def pkg_name(self, obj):
+        return obj.mem_name.member_name
 
 
 admin.site.register(MemberPackage, MemberPkgAdmin)
