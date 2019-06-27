@@ -77,14 +77,13 @@ class UserBill(models.Model):
     total_tax_amount = models.DecimalField(max_digits=7, decimal_places=2, default=0)
     total_paid = models.DecimalField(max_digits=7, decimal_places=2, default=0)
     total_owed = models.DecimalField(max_digits=7, decimal_places=2, default=0)
-    mem_name = models.ForeignKey('member.Membership', related_name='mem_name', on_delete=models.DO_NOTHING, null=True, blank=True)
+    mem_name = models.ForeignKey('member.Membership', related_name='m_name', on_delete=models.DO_NOTHING, null=True, blank=True)
+
+    def __unicode__(self):
+        return self.created_ts
 
     def amount(self):
         return self.line_items.aggregate(amount=Coalesce(Sum('amount'), Value(0.00)))['amount']
-
-    def pkg_name(self,):
-        # return self.member.MemberPackage.package_name
-        return self.mem_name.member_name
 
 
 class BillLineItem(models.Model):
