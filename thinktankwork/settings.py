@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'signup',
     'blog',
     'member',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 ]
 
 MIDDLEWARE = [

@@ -12,6 +12,3 @@ def index(request):
 def calendar(request):
     return render_to_response("calendar.html")
 
-
-def faq(request):
-    return render_to_response("faq.html")
