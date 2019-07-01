@@ -2,10 +2,51 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Login</button>
-</form>
+
+<style>
+     .bd-placeholder-img {
+       font-size: 1.125rem;
+       text-anchor: middle;
+       -webkit-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+     }
+
+     @media (min-width: 768px) {
+       .bd-placeholder-img-lg {
+         font-size: 3.5rem;
+       }
+     }
+   </style>
+    <!-- Custom styles for this template -->
+   <link href="/static/floating-labels.css" rel="stylesheet">
+<body class="text-center">
+<form class="form-signing" method="post">
+<div class="text-center mb-4">
+   <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+ </div>
+
+    {% csrf_token %}
+   {{ form.non_field_errors }}
+<div class="form-label-group">
+    {{ form.username.errors }}
+    {{ form.username }}
+    <label for="{{ form.username.label }}">Username: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+</div>
+<div class="form-label-group">
+    {{ form.password.errors }}
+    {{ form.password }}
+    <label for="{{ form.password.label }}">Password:</label>
+
+</div>
+
+    <button type="submit">Login</button>
+
+  </form>
+</body>
+<p></p>
+    <hr>
+
 {% endblock %}
