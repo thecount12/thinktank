@@ -34,18 +34,41 @@
 
 </div>
 <div class="form-label-group">
-    {{ form.password1.errors }}
+    {{ form.email.errors }}
+    {{ form.email }}
+    <label for="{{ form.email.label }}">Email:</label>
+
+</div>
+<div class="form-label-group">
+    {% if form.password1.errors %}
+       <ol>
+       {% for error1 in form.password1.errors %}
+        <li><p><strong>{{ error1 }}</strong></p></li>
+       {% endfor %}
+       </ol>
+    {% endif %}
     {{ form.password1 }}
     <label for="{{ form.password1.label }}">Password one:</label>
 
 </div>
 <div class="form-label-group">
-    {{ form.password2.errors }}
+    {% if form.password2.errors %}
+        <ol>
+        {% for error2 in form.password2.errors %}
+            <li><p style="font-size: larger"><strong>{{ error2 }}</strong></p></li>
+        {% endfor %}
+        </ol>
+    {% endif %}
     {{ form.password2 }}
     <label for="{{ form.password2.label }}">Password two:</label>
 
 </div>
+<div class="form-label-group">
+    {{ form.hint.errors }}
+    {{ form.hint }}
+    <label for="{{ form.hint.label }}">Password hint:</label>
 
+</div>
 
     <button type="submit">Sign up</button>
 
