@@ -3,13 +3,19 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 # from django.shortcuts import render_to_response
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.contrib.auth.models import User
+from signup.models import Profile
 
 
 class MemberListView(ListView):
     model = User
     paginate_by = 4
     queryset = User.objects.order_by('last_name')
+
+
+class MemberDetailView(DetailView):
+    model = Profile
 
 
 @login_required

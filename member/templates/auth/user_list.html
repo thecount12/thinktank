@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p>data</p>
+    {% for user_info in object_list  %}
+        <p>{{ user_info.first_name }} {{ user_info.last_name }}</p>
+    {% endfor %}
+    <p>------</p>
+    {{ objec_list.user }}
+{% endblock %}
