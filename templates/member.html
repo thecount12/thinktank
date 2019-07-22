@@ -1,9 +1,14 @@
 
 {% extends 'base.html' %}
 {% block content %}
-
-    Hello world my members!
-
-
+{% if request.user.is_staff %}
+    <p>Staff: {{ request.user.username }}</p>
+{% else %}
+    <p>&nbsp;</p>
+{% endif %}
+{% if request.user.is_authenticated %}
+    <p>Welcome {{ request.user.username }} !!!</p>
+{% endif %}
+<p>member pages</p>
 
 {% endblock %}
