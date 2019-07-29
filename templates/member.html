@@ -7,8 +7,9 @@
     <p>&nbsp;</p>
 {% endif %}
 {% if request.user.is_authenticated %}
-    <p>Welcome {{ request.user.username }} !!!</p>
+    <p>Welcome {{ request.user.username }}! Here is a <a href="/member/list">List of Members</a></p>
 {% endif %}
-<p><a href="/member/list">List of Members</a></p>
+<p></p>
+    <p>&nbsp;</p>
 <hr>
 {% endblock %}

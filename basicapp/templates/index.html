@@ -30,7 +30,7 @@
               <p class="card-text" style="text-align: center">View All Members.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Members</button>
+                  <a href="member/"><button type="button" class="btn btn-sm btn-outline-secondary">Members</button></a>
                   <!--<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
                 </div>
                 <!--<small class="text-muted">9 mins</small>-->
@@ -40,7 +40,7 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-              <svg class="bd" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"></title><rect width="100%" height="100%" fill="#55595c"/><foreignObject><p style="text-align: center"><iframe style="text-align: center; display: block; position: absolute; top: 0; margin: 0; float: right;" width="340" height="150" frameborder="0" scrolling="no" id="cal" src="{% url 'calendar' %}"></iframe></p></foreignObject></svg>
+              <svg class="bd" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"></title><rect width="100%" height="100%" fill="#55595c"/><foreignObject><p style="text-align: center"><iframe style="text-align: center; display: block; position: absolute; top: 0; margin: 0; float: right;" width="300" height="150" frameborder="0" scrolling="no" id="cal" src="{% url 'calendar' %}"></iframe></p></foreignObject></svg>
             <div class="card-body">
               <p class="card-text" style="text-align: center">See All Events</p>
               <div class="d-flex justify-content-between align-items-center">
@@ -54,5 +54,6 @@
           </div>
         </div>
 
+    <hr>
     <hr>
 {% endblock %}
