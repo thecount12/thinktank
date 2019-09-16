@@ -2,13 +2,14 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if request.user.is_staff %}
-    <p>Staff: {{ request.user.username }}</p>
+    <p>Staff Access: {{ request.user.username }}</p>
 {% else %}
     <p>&nbsp;</p>
 {% endif %}
 {% if request.user.is_authenticated %}
-    <p>Welcome {{ request.user.username }} !!!</p>
+    <p>Welcome {{ request.user.username }}! Here is a <a href="/member/list">List of Members</a></p>
 {% endif %}
-<p>member pages</p>
-
+<p></p>
+    <p>&nbsp;</p>
+<hr>
 {% endblock %}

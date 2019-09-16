@@ -2,8 +2,43 @@
 
 {% block content %}
 
-    <p>bazinga</p>
-    {{ profile.Address1 }}
-    {{ profile.user }}
-    {{ profile.user.first_name }}
+<div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Name: {{ profile.user.first_name }}<br>{{ profile.user.last_name }}</strong>
+            <p class="card-text mb-auto">Member active: {{ profile.subscriber }}</p>
+            <p class="card-text mb-auto">Member Since: {{ profile.user.date_joined }}</p>
+            <p></p>
+          <p class="card-text mb-auto">Bio: {{ profile.bio }}</p>
+            <p><a href="/member/list">Back</a></p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><foreignObject style="text-align: center;"><img style="display: block; text-align: center; position: absolute; top: 50px; left: 50px" height="125" width="100" src="/static/blank_person.png"></foreignObject><!--<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>--></svg>
+        </div>
+      </div>
+    </div>
+    {% if profile.public_profile %}
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Location: {{ profile.location }}</strong>
+            <p class="card-text mb-auto">Industry: {{ profile.industry }}</p>
+            <p class="card-text mb-auto">Kids: {{ profile.hasKids }}</p>
+            <p class="card-text mb-auto">Birthday: {{ profile.birth_date }}</p>
+
+          <p class="mb-auto">Blog Contributor: {{ profile.editor }}<br>City: {{ profile.city }}<br>State: {{ profile.state }}<br>Zip: {{ profile.zip_code }}<br>email: {{ profile.user.email }}</p>
+          <p></p>
+            <p></p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <!--<svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <p>Private Account</p>
+    {% endif %}
+</div>
+<hr>
 {% endblock %}
