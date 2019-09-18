@@ -2,19 +2,25 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 # from django.shortcuts import render_to_response
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.models import User
 from signup.models import Profile
 
 
-class MemberListView(ListView):
+# @login_required(redirect_field_name='/login') # deprecated or old way
+class MemberListView(LoginRequiredMixin, ListView):
+    login_url = '/accounts/login'
+    redirect_field_name = 'next'  # to proper page
     model = User
     paginate_by = 4
     queryset = User.objects.order_by('last_name')
 
 
-class MemberDetailView(DetailView):
+class MemberDetailView(LoginRequiredMixin, DetailView):
+    login_url = '/accounts/login'
+    redirect_field_name = 'next'
     model = Profile
 
 
