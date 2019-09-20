@@ -11,9 +11,9 @@ Admin has absolute power to everything.
 
 ### Setup
 
-1. setup virtualenv
-2. git clone repo
-3. pip install -r requirements.txt
+1. virtualenv -p /usr/local/bin/python3.7 ~/.thinktankvenv
+2. source ~/.thinktankvenv/bin/activate
+3. pip install -r requirements
 
 ### First Steps
 
