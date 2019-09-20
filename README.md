@@ -27,7 +27,7 @@ hopefully no bugs other then getboostrap templates
 
 python manage.py createsuperuser
 follow: prompts
-### rachel's note
+
 ### setup basic project
 
 1. create some test users
