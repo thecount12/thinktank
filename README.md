@@ -9,11 +9,13 @@ active resources such as dedicated, desk, office, day use.  Staff is the applica
 
 Admin has absolute power to everything. 
 
-### Setup
+### Setup for new users
 
-1. virtualenv -p /usr/local/bin/python3.7 ~/.thinktankvenv
-2. source ~/.thinktankvenv/bin/activate
-3. pip install -r requirements
+1. make sure you are in the right directory
+2. git clone https://github.com/thecount12/thinktank.git
+3. virtualenv -p /usr/local/bin/python3.7 ~/.thinktankvenv
+4. source ~/.thinktankvenv/bin/activate
+5. pip install -r requirements
 
 ### First Steps
 
